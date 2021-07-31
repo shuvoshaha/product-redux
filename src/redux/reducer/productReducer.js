@@ -1,13 +1,14 @@
 import  { ActionTypes } from '../contants/action-type'
 
-const initialState = products[
+const initialState = {
+    products: [
     {
         id: 1,
         title: "New Bie in redux",
         price: 25,
         category: "men"
     }
-]
+]}
 
 export const productReducer = (state = initialState, {type, payload}) =>{
     switch(type){
