@@ -5,13 +5,13 @@ import { SetProduct } from '../redux/actions/productActions'
 
 function ProductComponent() {
     const products = useSelector(state => state.allProducts.products)
-    const { title, price } = products[0]
+    const { title, price } = products
     const dispatch = useDispatch()
 
     const fetchData = async () =>{
        await axios.get(`https://fakestoreapi.com/products`)
         .then((res) =>{
-           console.log(res.data)
+           dispatch(SetProduct(res.data))
         })
         .catch(err =>{ console.log(err) })
     }
@@ -19,11 +19,14 @@ function ProductComponent() {
         fetchData()
     }, [])
 
+    console.log(products)
     return (
         <div className="productContainer">
            <div className="ul links">
                <div className="cards">
-                   <div className="imgage"></div>
+                   <div className="imgage">
+                      
+                   </div>
                    <div className="content">
                        <h2> {title} </h2>
                        <p>$ {price} </p>
