@@ -1,5 +1,4 @@
 import './App.css';
-import ProductContainer from './containers/ProductContainer';
 import ProductDetails from './containers/ProductDetails';
 import ProductListing from './containers/ProductListing';
 import Header from './containers/Header';
