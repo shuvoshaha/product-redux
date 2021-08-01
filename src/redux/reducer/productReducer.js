@@ -2,7 +2,7 @@ import  { ActionTypes } from '../contants/action-type'
 
 const initialState = {
     products: [
-    {
+        {
         id: 1,
         title: "New Bie in redux",
         price: 25,
@@ -10,11 +10,13 @@ const initialState = {
     }
 ]}
 
-export const productReducer = (state = initialState, {type, payload}) =>{
+ const ProductReducer = (state = initialState, {type, payload}) =>{
     switch(type){
-        case ActionTypes.SET_PRODUCT: 
-        return state;
+
+        case ActionTypes.SET_PRODUCT: return state;
 
         default: return state;
     }
 }
+
+export default ProductReducer;
