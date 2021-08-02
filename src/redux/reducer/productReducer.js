@@ -12,13 +12,18 @@ const initialState = {
             products: payload
         };
 
-        case ActionTypes.SELECTED_PRODUCT: 
-        return{
-            ...state,
-            ...payload // destructre the payload
-        }
-
         default: return state;
+    }
+}
+
+const SelectedProductReducer =  (state = {}, {type, payload}){
+    switch(type){
+        case ActionTypes.SELECTED_PRODUCT:
+            return{
+                ...state,
+                ...payload
+            }
+            default: return state;
     }
 }
 

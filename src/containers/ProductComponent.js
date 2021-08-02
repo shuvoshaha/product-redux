@@ -2,37 +2,48 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios';
 import { SetProduct } from '../redux/actions/productActions'
+import { Link } from 'react-router-dom'
 
 function ProductComponent() {
     const products = useSelector(state => state.allProducts.products)
-    const { title, price } = products
     const dispatch = useDispatch()
 
-    const fetchData = async () =>{
-       await axios.get(`https://fakestoreapi.com/products`)
-        .then((res) =>{
-           dispatch(SetProduct(res.data))
-        })
-        .catch(err =>{ console.log(err) })
+    const fetchData = async () => {
+        await axios.get(`https://fakestoreapi.com/products`)
+            .then((res) => {
+                dispatch(SetProduct(res.data))
+            })
+            .catch(err => { console.log(err) })
     }
-    useEffect(() =>{
+    useEffect(() => {
         fetchData()
     }, [])
 
-    console.log(products)
+    // console.log(products)
     return (
-        <div className="productContainer">
-           <div className="ul links">
-               <div className="cards">
-                   <div className="imgage">
-                      
-                   </div>
-                   <div className="content">
-                       <h2> {title} </h2>
-                       <p>$ {price} </p>
-                   </div>
-               </div>
-           </div>
+        <div className="container">
+            <div className="productContainer">
+            {
+                products.map((product) => {
+                    return(
+                        <div className="ul links" key={product.id}>
+                        <Link to={`/product/${product.id}`}>
+                            <div className="cards">
+                                <div className="image">
+                                    <img src={product.image} alt={product.title} />
+                                </div>
+                                <div className="content">
+                                    <h2> {product.title} </h2>
+                                    <p>$ {product.price} </p>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                    )
+                })
+            }
+            
+        </div>
         </div>
     )
 }
