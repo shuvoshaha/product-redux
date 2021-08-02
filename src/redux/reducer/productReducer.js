@@ -4,7 +4,7 @@ const initialState = {
     products: []
 }
 
- const ProductReducer = (state = initialState, {type, payload}) =>{
+ export const ProductReducer = (state = initialState, {type, payload}) =>{
     switch(type){
 
         case ActionTypes.SET_PRODUCT: return {
@@ -16,7 +16,7 @@ const initialState = {
     }
 }
 
-const SelectedProductReducer =  (state = {}, {type, payload}){
+export const SelectedProductReducer =  (state = {}, {type, payload}){
     switch(type){
         case ActionTypes.SELECTED_PRODUCT:
             return{
@@ -27,4 +27,3 @@ const SelectedProductReducer =  (state = {}, {type, payload}){
     }
 }
 
-export default ProductReducer;
