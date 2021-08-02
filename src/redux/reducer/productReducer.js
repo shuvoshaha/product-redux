@@ -12,6 +12,12 @@ const initialState = {
             products: payload
         };
 
+        case ActionTypes.SELECTED_PRODUCT: 
+        return{
+            ...state,
+            ...payload // destructre the payload
+        }
+
         default: return state;
     }
 }
