@@ -1,6 +1,12 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { SetProductModal } from '../redux/actions/productActions'
 
-const Modal = (setFalse) => {
+const Modal = () => {
+    const state = useSelector(state => state.product)
+    const dispatch = useDispatch(SetProductModal(false))
+
+
     const toggleModal = (e) =>{
         e.target.classList.contain()
         setFalse(false)

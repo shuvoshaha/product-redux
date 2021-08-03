@@ -30,8 +30,14 @@ export const SelectedProductReducer =  (state = {}, {type, payload}) =>{
     }
 }
 
-export const ModalSetToggle = (state = false, {type, payload}) =>{
+const initState = false
+export const ModalSetToggle = (state = initState, {type, payload}) =>{
     switch(type){
-        case 
+        case ActionTypes.SET_PRODUCT_MODAL:
+            return{
+                ...state,
+                initState: payload
+            }
+        default: return state
     }
 }

@@ -1,9 +1,10 @@
 import { combineReducers } from "redux";
-import  {ProductReducer, SelectedProductReducer} from "./ProductReducer";
+import  {ModalSetToggle, ProductReducer, SelectedProductReducer} from "./ProductReducer";
 
 const rootReducer = combineReducers({
     allProducts: ProductReducer,
-    product: SelectedProductReducer
+    product: SelectedProductReducer,
+    setModal: ModalSetToggle
 })
 
 export default rootReducer;
