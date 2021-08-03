@@ -19,3 +19,11 @@ export const RemoveSelectedProduct = () =>{
         type: ActionTypes.REMOVE_SELECTED_PRODUCT
     }
 }
+
+// set modal
+export const SetProductModal = (status) => {
+    return {
+        type: ActionTypes.SET_PRODUCT_MODAL,
+        payload: status
+    }
+}

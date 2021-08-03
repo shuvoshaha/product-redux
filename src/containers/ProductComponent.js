@@ -27,14 +27,15 @@ function ProductComponent() {
                 products.map((product) => {
                     return(
                         <div className="ul links" key={product.id}>
-                        <Link to={`/product/${product.id}`}>
+                        <Link to={`/product/${product.id}`} onClick={() => setFalse(true)}>
                             <div className="cards">
                                 <div className="image">
                                     <img src={product.image} alt={product.title} />
                                 </div>
                                 <div className="content">
                                     <h2> {product.title} </h2>
-                                    <p>$ {product.price} </p>
+                                    <p>${product.price} </p>
+                                    <h6> {product.category} </h6>
                                 </div>
                             </div>
                         </Link>

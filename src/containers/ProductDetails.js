@@ -29,7 +29,7 @@ const ProductDetails = () => {
     }, [productID])
 
 
-    console.log(state.title)
+    // console.log(state.title)
     return (
        <>
        {/* <Helmet>
@@ -39,6 +39,7 @@ const ProductDetails = () => {
        </Helmet> */}
         { Object.keys(state).length !== 0 ? <div className="product-details">
             <h2> {title} </h2>
+            <img src={image} alt={title} />
         </div>
     : <p>Loading...</p>    
     }

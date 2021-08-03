@@ -30,3 +30,8 @@ export const SelectedProductReducer =  (state = {}, {type, payload}) =>{
     }
 }
 
+export const ModalSetToggle = (state = false, {type, payload}) =>{
+    switch(type){
+        case 
+    }
+}
